@@ -1,6 +1,7 @@
 package com.example.firebasecontactapp;
 
 import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 
 public class User extends BaseObservable {
     String userName;
@@ -16,27 +17,33 @@ public class User extends BaseObservable {
     public User() {
     }
 
+    @Bindable
     public String getUserName() {
         return userName;
     }
 
     public void setUserName(String userName) {
         this.userName = userName;
+        notifyPropertyChanged(BR.userName);
     }
 
+    @Bindable
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+        notifyPropertyChanged(BR.phoneNumber);
     }
 
+    @Bindable
     public String getGroupUser() {
         return groupUser;
     }
 
     public void setGroupUser(String groupUser) {
         this.groupUser = groupUser;
+        notifyPropertyChanged(BR.groupUser);
     }
 }
